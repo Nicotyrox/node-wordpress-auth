@@ -46,7 +46,7 @@ WP_Auth.prototype.checkAuth = function( req ) {
 	if ( req.headers.cookie )
 		req.headers.cookie.split( ';' ).forEach( function( cookie ) {
 			if ( cookie.split( '=' )[0].trim() == self.cookiename )
-				data = cookie.split( '=' )[1].trim().split( '%7C' );
+				data = cookie.split( '=' )[1].trim().split( '\|' );
 		} );
 	else
 		return new Invalid_Auth();
